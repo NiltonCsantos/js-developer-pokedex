@@ -30,7 +30,9 @@ function loadPokemonItens(offset, limit) {
     })
 }
 
-loadPokemonItens(offset, limit)
+loadPokemonItens(offset, limit);
+
+
 
 loadMoreButton.addEventListener('click', () => {
     offset += limit
@@ -45,3 +47,21 @@ loadMoreButton.addEventListener('click', () => {
         loadPokemonItens(offset, limit)
     }
 })
+
+
+function handlePokemonClick(event) {
+    const clickedPokemon = event.target.closest('.pokemon');
+  
+    const number = clickedPokemon.querySelector('.number').textContent;
+
+    const id= parseInt(number.substring(1), 10);
+    
+    window.location.href=`pokemon.html?id=${id}`
+  
+  }
+  
+  
+  document.addEventListener('click', handlePokemonClick);
+
+  
+
