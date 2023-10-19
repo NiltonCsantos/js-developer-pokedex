@@ -16,7 +16,7 @@ async function createInfo() {
 
       const pokemon = await pokeApi.getPokemonById(id);
 
-      console.log(pokemon)
+
   
       const infoHTML = `
   
